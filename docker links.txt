@@ -41,5 +41,9 @@ docker service create \
 
 ------------docker stack------------------
  docker stack deploy -c
+ 
+ -----labels and constraints--------------
+1    41  docker service create --name nginx2 -p 9000:80 --constraint=node.labels.Dev==YES --replicas 2 nginx
+2    46  docker service create --name nginx2 -p 9000:80 --constraint=node.labels.Env==Dev --replicas 2 nginx
 
 
